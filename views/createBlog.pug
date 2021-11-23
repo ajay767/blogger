@@ -1,0 +1,22 @@
+extends _baseDashboard
+
+block content 
+  h1.text-lg.font-medium.text-gray-700 Create Blogs
+  .my-4.grid.grid-cols-12
+    .col-span-6.space-y-4
+      .flex.flex-col.text-sm.h-max
+        label.mb-1 Title
+        input#blog_title.p-2.text-gray-700.border.border-gray-200.rounded-md(type='text')
+      .flex.flex-col.text-sm
+        label.mb-1 Description
+        textarea#blog_description.p-2.text-gray-700.border.border-gray-200.rounded-md(type='text')
+      div
+        label#blog_poster_label.p-2.px-4.cursor-pointer.rounded.bg-gray-700.text-white.text-sm(for='blog_poster')
+          | Upload Poster
+        input#blog_poster.invisible(type='file')
+    .row-start-1.row-span-3.col-start-7.col-span-6.px-4
+      img#blog_poster_preview.w-full.h-60.object-cover.rounded-md(src='/images/tour-3.jpg')
+  #tinymce.my-4.relative.prose.prose-sm
+  button#save-editor.my-4.p-2.px-4.prose.bg-blue-500.text-white.text-sm.rounded
+    | Save Blog
+  #result.p-10.prose-sm.prose.mx-auto

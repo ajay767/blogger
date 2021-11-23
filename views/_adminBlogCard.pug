@@ -1,0 +1,13 @@
+mixin blogCard(blog)
+    .flex.mb-4(class="w-8/12")
+        .relative.w-44.h-28.overflow-auto.flex-shrink-0.mr-4.rounded
+            img.w-full.h-full.absolute.top-0.right-0.bottom-0.left-0(src= blog.poster)
+            .w-full.h-full.absolute.top-0.right-0.bottom-0.left-0.z-10.bg-gray-400.bg-opacity-40.opacity-0.flex.items-center.justify-between.px-12(class='hover:opacity-100')
+                span#edit_blog_card.h-8.w-8.rounded-full.bg-gray-100.p-2.flex.items-center.justify-center.cursor-pointer(data-id= blog._id, data-action="edit")
+                    img.pointer-events-none.w-full.h-full(src='/images/pencil.png')
+                span#delete_blog_card.h-8.w-8.rounded-full.bg-gray-100.p-2.flex.items-center.justify-center.cursor-pointer(data-id= blog._id,data-action="delete")
+                    img.pointer-events-none.w-full.h-full(src='/images/delete.png')
+        .text-gray-700
+            h4.text-sm.font-medium.mb-1.line-clamp-2= blog.title
+                
+            p.text-sm.line-clamp-2= blog.description

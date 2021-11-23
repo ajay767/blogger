@@ -1,0 +1,24 @@
+include _blogCard
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles/style.css")
+        link(rel="stylesheet", href="/styles/utils.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
+    body 
+        include _header
+        .prose.mx-auto 
+            h1= blog.title
+            h4.text-gray-500= blog.description
+            span.text-sm.text-gray-400= blog.createdAt
+            img.w-full.rounded-md.h-72.object-cover(src=`${blog.poster}`)
+            div#blogContainer= blog.body  
+            
+            
+        include _footer
+        script(src="https://cdn.tiny.cloud/1/8u6tk8h1itzc2rqq6hsko64rgabuvavkkya3zstce9i7snuy/tinymce/5/tinymce.min.js",referrerpolicy="origin") 
+        script(src="/js/bundle.js") 

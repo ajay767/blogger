@@ -1,0 +1,8 @@
+mixin blogCard(blog)
+    a(href=`/blog/${blog._id}`)
+        .rounded-xl.m-4.overflow-hidden.shadow-xl.blog_card
+            img.w-full.h-44.object-cover(src= blog.poster)
+            .p-4
+                span.text-xs.font-medium.text-gray-500= blog.createdAt
+                h2.text-base.font-medium.mb-2.line-clamp-1= blog.title
+                p.text-sm.text-gray-500.line-clamp-2= blog.description
